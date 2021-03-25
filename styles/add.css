@@ -1,0 +1,134 @@
+#hide-inputs, .hide-id{
+  display: none;
+}
+.add-container, .edit-container, .delete-container{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+}
+.add, .edit, .delete{
+  width: 300px;
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.16);
+  background-color: white;
+  border-radius: 30px;
+  padding: 30px;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.delete{
+  text-align: center;
+}
+.delete-item-button{
+  margin-top: 30px;
+}
+.delete-inside-container{
+  margin-top: 15px;
+}
+#formBtn, .editBtn{
+  border-radius: 30px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  background-color: #464646;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 2px 2px 15px rgba(0,0,0,0.16);
+}
+#formBtn:hover, .editBtn:hover{
+  cursor: pointer;
+  background-color: #2D2D2D;
+}
+#formBtn:active, #formBtn:focus, .editBtn:active, .editBtn:focus{
+    outline: none;
+}
+.editBtn{
+  margin: 15px;
+  width: 120px;
+}
+#deleteBtn{
+  background-color: #CBCBCB;
+  color: #2D2D2D;
+}
+#deleteBtn:hover{
+  background-color: #BFBFBF;
+}
+.add img{
+  padding: 30px 0;
+}
+input, option{
+  font-family: futura-pt, sans-serif;
+  margin: 0;
+  font-size: 16px;
+}
+input{
+  border: none;
+  outline: none;
+  margin-top: 30px;
+  width: 200px;
+}
+#or{
+  margin-top: 30px;
+}
+#newlist, #currentlist{
+  border-bottom: 1px solid #CBCBCB;
+}
+#datalist{
+  background-color: #E3EBFF;
+  border-radius: 5px;
+  padding: 6px 10px;
+}
+#datalist:hover{
+  cursor: pointer;
+}
+.exitImage img, #exit-edit img{
+  width: 12px;
+  padding: 0;
+}
+.exitImage:hover, #exit-edit:hover{
+  cursor: pointer;
+  background-color: #F2F2F2;
+}
+.exitImage, #exit-edit{
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  padding: 8px;
+}
+.edit-buttons{
+  display: flex;
+}
+.edit-buttons button{
+  margin: 5px;
+}
+
+/* EDIT LIST STYLES */
+#currentlist{
+  border: 3px solid #CBCBCB;
+  border-radius: 15px;
+  padding: 15px 32px;
+  margin: 20px;
+}
+.edit-label{
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  left: 80px;
+}
+.label-container{
+  margin: 20px 0 10px;
+}
+.list-style{
+
+}

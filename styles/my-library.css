@@ -1,0 +1,219 @@
+#my-library{
+  width: fit-content;
+  top: 55px;
+  left: 4%;
+  position: absolute;
+  margin-top: 0;
+}
+#my-library p a, #back-library p a{
+  color: black;
+}
+#my-library:hover > img, #back-library:hover > img{
+  cursor: pointer;
+  transform: translateX(-30px);
+}
+.title-container{
+  display: flex;
+  width: fit-content;
+  align-items: center;
+}
+.title-container svg{
+  width: 28px;
+  height: 28px;
+  padding: 0 20px;
+}
+.title-container:hover{
+  cursor: pointer;
+}
+.title-container:hover > svg{
+  fill: black;
+}
+.list-row{
+  display: grid;
+  grid-template-columns: repeat(20, 260px);
+  grid-gap: 15px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.list-row::-webkit-scrollbar {
+  width: 0;
+}
+.list-item{
+  width: 200px;
+  background-color: #F2F6FF;
+  padding: 30px 30px 20px;
+  border-radius: 30px;
+}
+.list-item:hover{
+  cursor: pointer;
+}
+li{
+  list-style-type: none;
+  text-align: center;
+}
+li p, .list-headings p{
+  font-size: 22px;
+  font-weight: 600;
+  text-align: left;
+}
+#lib-title{
+  max-height: 60px;
+  overflow: hidden;
+}
+li p:nth-child(2), .list-headings p:nth-child(2){
+  font-weight: 400;
+}
+.add-note{
+  position: absolute;
+  right: 0;
+  height: 16px;
+}
+.add-note svg:hover{
+  cursor: pointer;
+  fill: black;
+  animation: editRotate .6s ease forwards;
+}
+@keyframes editRotate{
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(-95deg);}
+  100% {transform: rotate(0deg);}
+}
+#list-title{
+  margin-left: 70px;
+  font-size: 28px;
+  font-weight: 700;
+}
+.grid-container{
+  margin: 30px 0 90px;
+  position: relative;
+}
+.list-headings{
+  height: 100px;
+  place-self: end;
+}
+#arrow-right-library{
+  position: absolute;
+  top: 50%;
+  right: 70px;
+  z-index: 1;
+}
+#arrow-right-library:hover{
+  background-color: rgba(0,0,0,0.2);
+}
+#results{
+  text-align: center;
+  display: none;
+}
+/* LIST ITEM STYLES */
+#back-library{
+  position: sticky;
+  margin: 55px 0 50px 4%;
+  width: fit-content;
+  z-index: 3;
+}
+.item-body{
+  display: flex;
+  padding: 20px 0;
+}
+.item-view{
+  padding: 0 40px;
+}
+#item-title{
+  font-size: 28px;
+  font-weight: 700;
+  margin: 15px 30px;
+}
+#single-item{
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.text-main svg{
+  width: 24px;
+  height: 24px;
+}
+.text-main svg:hover{
+  fill: black;
+  cursor: pointer;
+}
+.delete-item{
+ text-align: start;
+ height: 14px;
+}
+.delete-item, .add-note{
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+}
+.delete-item svg{
+  width: 14px;
+  height: 14px;
+}
+.icon-container{
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  visibility: hidden;
+  position: relative;
+  bottom: -10px;
+}
+.delete-item svg:hover g, .delete-item svg:hover{
+ stroke: black;
+ cursor: pointer;
+}
+/* DETAILS PAGE STYLES */
+.details-container{
+  padding: 0 40px;
+  width: auto;
+}
+textarea, input, input:focus, input:active{
+  border: none;
+  outline: none;
+}
+.input-container{
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+}
+.new-note-title{
+  font-size: 22px;
+  font-weight: 600;
+}
+.new-note-p{
+  margin: 20px 0 60px 0;
+  font-size: 16px;
+}
+.enter-new-note{
+  padding: 20px 40px 100px;
+}
+#saveBtn{
+  background-color: white;
+  color: #2D2D2D;
+  border: 2px solid #2D2D2D;
+}
+.save-button{
+  display: flex;
+  justify-content: flex-end;
+}
+#note-container{
+  position: absolute;
+  top: 0;
+}
+.note-title{
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+.saved-notes-container{
+  padding: 20px 40px;
+}
+#note-book-details{
+  padding-bottom: 60px;
+  text-align: center;
+}
+#note-book-details:hover{
+  cursor: auto;
+}
+.notes-body-container{
+  width: 60%;
+}

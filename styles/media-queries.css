@@ -1,0 +1,91 @@
+@media screen and (max-width: 1200px){
+  #title-main{
+    font-size: 44px;
+  }
+  .main-text{
+    width: 205px;
+  }
+  #index-body{
+    overflow-y: scroll;
+  }
+ }
+@media screen and (max-width: 1000px){
+ .intro-container{
+   display: flex;
+   flex-direction: column;
+ }
+ .outline-container, #last-grid-item{
+   display: none;
+ }
+ .white-box{
+   left: 0;
+ }
+ .main-text{
+   margin-left: 10%;
+ }
+  #my-library{
+    top: 25px;
+    margin: 0;
+  }
+  .search-bar{
+    margin: 30px 0;
+  }
+  #nav-library{
+    width: auto;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 850px){
+ #searchLibrary{
+   margin-top: 80px;
+ }
+ .item-body{
+   flex-direction: column;
+ }
+ .details-container{
+   margin: 0 auto;
+   width: auto;
+   padding: 40px;
+ }
+ .notes-body-container{
+   width: 100%;
+ }
+}
+@media screen and (max-width: 650px){
+  .book-s-container{
+    width: 100%;
+  }
+  .search-result-container{
+    position: absolute;
+    top: 110px;
+  }
+  #input{
+    width: 200px;
+  }
+  .title-search-container{
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+  }
+  .text-container{
+    width: -webkit-fill-available;
+    border-radius: 30px;
+  }
+  .arrow-container{
+    position: absolute;
+    right: 15px;
+    top: 110px;
+  }
+  #arrow-left-contain{
+    left: 15px;
+  }
+}
+@media screen and (max-width: 460px){
+ #hand-one{
+   font-size: 32px;
+   width: 300px;
+ }
+#note-container{
+  top: 40px;
+}
+}

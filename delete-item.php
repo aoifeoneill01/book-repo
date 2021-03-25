@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  </head>
+  <body>
+
+    <div class="delete-container" id="deleteForm-contain">
+      <form class="delete" action="edit.php" method="POST">
+        <div id="exit-edit" class="exit">
+          <img src="images/x.svg" alt="Exit icon">
+        </div>
+        <div class="delete-inside-container">
+          <!-- BOOK DATA HERE -->
+          <div class="list-headings">
+          <p id="delete-title" class="lib-c-title"></p>
+          <p id="author" class="delete-author"></p>
+          </div>
+          <img id="addForm-cover" class="delete-cover" src="" alt="book cover selected">
+          <input class="hide-id delete-id" type="text" name="id" value="">
+        </div>
+        <div class="delete-item-button">
+          <button class="editBtn" id="deleteBtn" type="submit" name="delete">Delete item</button>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
