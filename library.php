@@ -14,8 +14,8 @@
   </head>
   <body>
 <?php
-require 'edit-list.php';
-require 'delete-item.php';
+require 'edit-list.html';
+require 'delete-item.html';
  ?>
 
 <div class="library" id="my-library">

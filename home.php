@@ -13,7 +13,7 @@
   <body id="index-body">
 
 <?php
-require 'addtolist.php';
+require 'addtolist.html';
  ?>
 
 <!-- GRID LINES STYLING ELEMENTS -->
