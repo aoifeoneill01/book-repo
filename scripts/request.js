@@ -1,4 +1,9 @@
 /*jshint esversion: 6*/
+
+function alertUser(){
+  alert("For the purpose of this demo, any input you make will be deleted after 30mins");
+}
+
 var titleValue;
 
  document.getElementById('submitBtn').addEventListener('click', event => {
@@ -13,7 +18,9 @@ var titleValue;
 
 
 // Save value and place into url
-fetch('https://www.googleapis.com/books/v1/volumes?q='+titleValue+'&key=AIzaSyAh5OwnOxgMSHFxF26o9ZR6RIGi4wRrWPo').then((response) => {
+fetch('https://www.googleapis.com/books/v1/volumes?q='+titleValue+'&key=AIzaSyAh5OwnOxgMSHFxF26o9ZR6RIGi4wRrWPo', {
+  headers: {}
+}).then((response) => {
  console.log('resolved');
  return response.json();
 }).then(data => {

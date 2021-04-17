@@ -5,7 +5,6 @@ fetch("./retrieve.php").then(response => {
     console.log('success');
 return response.json();
 }).then(data => {
-
 //GRAB ALL LIST NAMES AND CREATE SEPERATE LIST SECTIONS
   var allLists = data.map( val => {
        return val.createlist;
@@ -22,6 +21,7 @@ const uniqueList = allLists.reduce((total, amount) => {
 
 
 uniqueList.forEach(val => {
+
   let test =
   `<option value="${val}">${val}</option>`;
   document.getElementById("currentLists").innerHTML += test;

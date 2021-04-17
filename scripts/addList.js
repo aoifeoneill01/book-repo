@@ -5,6 +5,7 @@ document.querySelector(".addBtn").addEventListener('click', addForm => {
   var imageSrc = document.getElementById('image').src;
   let title = document.getElementById('title').innerHTML;
   let author = document.getElementById('author').innerHTML;
+  console.log(title);
 
 
    document.getElementById("addForm-Contain").style.display = "flex";

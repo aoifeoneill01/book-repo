@@ -7,11 +7,11 @@ p, label, #input, #submitBtn, #addToList, #formBtn, .editBtn, .new-note-title, t
   margin: 0;
 }
 .handwriting{
-  font-family: chantal, sans-serif;
-  font-size: 40px;
+  font-family: permanent-marker, sans-serif;
+  font-size: 37px;
   color: #CDDDFF;
 }
-#submitBtn:hover, #addToList:hover, #formBtn:hover{
+#addToList:hover, #formBtn:hover{
 background-color: #2D2D2D;
 }
 .search-result-container{
@@ -84,12 +84,14 @@ background-color: #2D2D2D;
   justify-content: center;
 }
 .search-bar{
-  max-width: 376px;
+  width: 370px;
   margin: 40px 0;
   border-radius: 30px;
-  box-shadow: 2px 2px 20px rgba(0,0,0,0.16);
   height: 40px;
   background-color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 #input{
   outline: none;
@@ -105,15 +107,18 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
+#searchLibrary input{
+  padding: 0;
+}
 #submitBtn, .addBtn{
   border-radius: 30px;
-  width: 120px;
+  width: 60px;
   height: 40px;
   border: none;
-  background-color: #464646;
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
+  background-color: white;
+}
+button img{
+  width: 16px;
 }
 #submitBtn:hover, .addBtn:hover{
   cursor: pointer;
@@ -193,7 +198,7 @@ padding: 40px 0;
   justify-content: center;
 }
 .library img{
-  width: 20px;
+  width: 28px;
   padding: 0 20px;
   position: relative;
   transition: transform .7s;

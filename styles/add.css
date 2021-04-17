@@ -31,6 +31,9 @@
 .delete-inside-container{
   margin-top: 15px;
 }
+.delete-inside-container img{
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
 #formBtn, .editBtn{
   border-radius: 30px;
   width: 100px;
@@ -128,7 +131,4 @@ input{
 }
 .label-container{
   margin: 20px 0 10px;
-}
-.list-style{
-
 }

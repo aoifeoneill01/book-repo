@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/add.css">
     <link rel="stylesheet" href="styles/media-queries.css">
     <link rel="stylesheet" href="https://use.typekit.net/rog2nul.css">
-    <link rel="shortcut icon" type="image/png" href="images/blue.svg">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
     <title>Book Repository</title>
   </head>
   <body id="index-body">
@@ -40,14 +41,14 @@ require 'addtolist.html';
     <!-- GO TO LIBRARY -->
     <div class="library" id="nav-library">
        <p><a href="library.php"><span>Go to my</span> Library</a></p>
-       <img src="images/arrow-right-circle-fill.svg" alt="arrow">
+       <img src="images/arrow-right-short.svg" alt="arrow">
    </div>
 
     <!-- SEARCH BAR -->
     <div class="search-container">
       <form class="search-bar">
         <input id="input" type="text" name="title-search" value="" placeholder="Search By Title">
-        <button id="submitBtn" type="submit" name="submit">Search</button>
+        <button id="submitBtn" type="submit" name="submit"><img src="images/search.svg" /></button>
       </form>
     </div>
 
