@@ -30,7 +30,7 @@
   cursor: pointer;
 }
 .title-container:hover > svg{
-  fill:  #628BFF;
+  fill: black;
 }
 .list-row{
   display: grid;
@@ -45,7 +45,7 @@
 }
 .list-item{
   width: 200px;
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.8);
   padding: 30px 30px 20px;
   border-radius: 20px;
 }
@@ -81,9 +81,8 @@ li p:nth-child(2), .list-headings p:nth-child(2){
 #list-title, .note-title{
   margin-left: 70px;
   font-family: permanent-marker, sans-serif;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 400;
-  color: #628BFF;
 }
 .note-title{
   margin: 0;;
@@ -151,6 +150,9 @@ li p:nth-child(2), .list-headings p:nth-child(2){
 .delete-item, .add-note{
   padding: 0 5px;
 }
+.delete-note, .edit-note{
+  padding: 3px 0;
+}
 .delete-item svg, .add-note svg{
   width: 30px;
   height: 30px;
@@ -175,6 +177,10 @@ li p:nth-child(2), .list-headings p:nth-child(2){
 }
 
 /* DETAILS PAGE STYLES */
+.edit-this-note{
+  position: absolute;
+  width: 800px;
+}
 .details-container{
   padding: 0 40px;
   width: auto;
@@ -187,23 +193,31 @@ textarea{
   background-color: rgba(255,255,255,0.3);
   border-radius: 10px;
   padding: 20px;
+  resize: none;
+  position: relative;
+  left: -20px;
 }
-.input-container{
+.text-note{
+  width: 90%;
+}
+.input-container, .edit-note-container{
   display: flex;
   flex-direction: column;
   visibility: hidden;
+  max-width: 800px;
 }
 .new-note-title{
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 600;
   background-color: rgba(255,255,255,0);
 }
 .new-note-p{
   margin-top: 20px;
-  font-size: 16px;
-}
-.enter-new-note{
-  padding: 20px 40px 100px;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: inherit;
+  height: fit-content;
 }
 #saveBtn{
   background-color: white;
@@ -218,7 +232,7 @@ textarea{
   top: 0;
 }
 .saved-notes-container{
-  padding: 20px 40px;
+  padding-top: 30px;
 }
 #note-book-details{
   padding-bottom: 60px;
@@ -229,26 +243,28 @@ textarea{
 }
 .notes-body-container{
   width: 65%;
+  margin: 0 auto;
 }
 .notes-section{
   display: flex;
-  margin: 60px 0;
-}
-.notes-section div:nth-child(1){
-  width: 95%;
+  margin-bottom: 60px;
+  max-width: 800px;
 }
 .notes-section svg{
   width: 26px;
   height: 26px;
   align-self: flex-end;
 }
-.edit-note{
-  width: 16px !important;
-}
 .notes-section:hover > .note-icons{
   visibility: visible;
   cursor: pointer;
 }
 .note-icons{
-  align-items: flex-end;
+  width: 5%;
+  align-items: start;
+  justify-content: flex-end;
+  margin: 0;
+  bottom: 0;
+  flex-direction: column;
+  padding-left: 25px;
 }

@@ -53,15 +53,16 @@
     outline: none;
 }
 .editBtn{
-  margin: 15px;
+  margin: 15px 10px;
   width: 120px;
 }
 #deleteBtn{
-  background-color: #CBCBCB;
+  background-color: rgba(0,0,0,0);
   color: #2D2D2D;
+  border: 2px solid rgba(0,0,0,0.2);
 }
 #deleteBtn:hover{
-  background-color: #BFBFBF;
+  background-color: rgba(0,0,0,0.1);
 }
 .add img{
   padding: 30px 0;

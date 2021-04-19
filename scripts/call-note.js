@@ -1,4 +1,3 @@
-/* jshint esversion:6 */
 
 fetch('./retrieve-notes.php').then(response => {
    return response.json();
@@ -16,9 +15,10 @@ fetch('./retrieve-notes.php').then(response => {
   for(var x in notes)
    section +=
    `<div class="notes-section">
-    <div>
+    <div class="text-note">
      <h2 class="new-note-title">${notes[x].noteName}</h2>
      <p class="new-note-p">${notes[x].noteInput}</p>
+     <p class="hide-id">${notes[x].id}</p>
     </div>
     <div class="icon-container note-icons">
        <div class="delete-item delete-note">
@@ -35,6 +35,30 @@ fetch('./retrieve-notes.php').then(response => {
    document.querySelector(".saved-notes-container").innerHTML = section;
 
 
+   // EDIT NOTE FORM
+   document.querySelectorAll(".edit-note").forEach(note => {
+   note.addEventListener('click', editThisNote => {
+      document.querySelector(".edit-note-container").style.visibility = "visible";
+
+      const sectionTitle = note.parentNode.previousElementSibling.firstElementChild.textContent;
+      document.querySelector(".new-note-title").value = sectionTitle;
+
+      const sectionText = note.parentNode.previousElementSibling.firstElementChild.nextElementSibling.textContent;
+      document.querySelector(".new-note-p").value = sectionText;
+
+      const positionY = note.parentNode.parentNode.offsetTop;
+      document.querySelector(".edit-this-note").style.top = positionY + 'px';
+
+      note.parentNode.parentNode.style.visibility = "hidden";
+      note.parentNode.parentNode.style.height = "300px";
+
+      const id = note.parentNode.previousElementSibling.firstElementChild.nextElementSibling.nextElementSibling.textContent;
+      document.getElementById("note-id").value = id;
+   });    
+});    
+
+
 }).catch(err => {
    console.log('Error');
 });
+

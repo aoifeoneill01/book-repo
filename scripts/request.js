@@ -1,14 +1,9 @@
 /*jshint esversion: 6*/
 
-function alertUser(){
-  alert("For the purpose of this demo, any input you make will be deleted after 30mins");
-}
-
 var titleValue;
 
  document.getElementById('submitBtn').addEventListener('click', event => {
  event.preventDefault();
- document.querySelector(".intro-container").style.backgroundColor = "white";
  document.querySelector(".outline-container").style.display = "none";
  document.querySelector(".main-text").style.display = "none";
  document.querySelector(".white-box").style.display = "none";
