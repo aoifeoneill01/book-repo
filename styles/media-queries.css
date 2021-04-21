@@ -48,7 +48,10 @@
    padding: 40px;
  }
  .notes-body-container{
-   width: 100%;
+   width: 80%;
+ }
+ .edit-this-note{
+   width: 80%;
  }
 }
 @media screen and (max-width: 650px){

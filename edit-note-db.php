@@ -2,6 +2,9 @@
 
 require 'db-connect.php';
 
+
+// Edit Note
+
 if(isset($_POST['save']))  {    
 
     $id = mysqli_real_escape_string($conn, $_POST['id']);
@@ -17,6 +20,24 @@ if(isset($_POST['save']))  {
         echo 'update note error';
     }
 
+}
+
+
+
+// Delete Note
+
+if(isset($_POST['delete'])) {
+
+    $id = mysqli_real_escape_string($conn, $_POST['id']);
+
+    $queryDelete = "DELETE FROM addnote WHERE id = '$id'";
+
+    if(mysqli_query( $conn, $queryDelete)){
+         header('Location: library.php');
+         exit;
+    } else {
+        echo 'Delete note error';
+    }
 }
 
 ?>

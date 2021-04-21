@@ -37,6 +37,9 @@
 
 
 <div class="notes-body-container">
+  <?php
+    include 'edit-note.php'
+  ?>
    <div class="saved-notes-container">
       <!-- NOTES GO HERE -->
    </div>

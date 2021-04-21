@@ -20,12 +20,12 @@ class ListItem{
           <img id="lib-image" src="${this.image}">
           <div class="icon-container">
           <div class="delete-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g transform="translate(-1181 -2128)"><g transform="translate(1181 2128)" fill="none" stroke="#B2B2B2" stroke-width="3"><circle cx="30" cy="30" r="30" stroke="none"/><circle cx="30" cy="30" r="28.5" fill="none"/></g><g transform="translate(1181 2128)">
-             <path d="M4.919,4.919a1.428,1.428,0,0,1,2.022,0L14.5,12.48l7.558-7.561A1.43,1.43,0,0,1,24.08,6.941L16.519,14.5l7.561,7.558a1.43,1.43,0,0,1-2.022,2.022L14.5,16.519,6.941,24.08a1.43,1.43,0,1,1-2.022-2.022L12.48,14.5,4.919,6.941a1.428,1.428,0,0,1,0-2.022Z" transform="translate(15.501 15.501)" fill="#B2B2B2" stroke="none" /></g></g></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g transform="translate(-1181 -2128)"><g transform="translate(1181 2128)" fill="none" stroke="#7E7E7E" stroke-width="3"><circle cx="30" cy="30" r="30" stroke="none"/><circle cx="30" cy="30" r="28.5" fill="none"/></g><g transform="translate(1181 2128)">
+             <path d="M4.919,4.919a1.428,1.428,0,0,1,2.022,0L14.5,12.48l7.558-7.561A1.43,1.43,0,0,1,24.08,6.941L16.519,14.5l7.561,7.558a1.43,1.43,0,0,1-2.022,2.022L14.5,16.519,6.941,24.08a1.43,1.43,0,1,1-2.022-2.022L12.48,14.5,4.919,6.941a1.428,1.428,0,0,1,0-2.022Z" transform="translate(15.501 15.501)" fill="#7E7E7E" stroke="none" /></g></g></svg>
            </div>
           <div class="add-note"><a href="details.php?title=${this.title}">
-           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g transform="translate(-1094 -2128)"><g transform="translate(1094 2128)" fill="none" stroke="#B2B2B2" stroke-width="3"><circle cx="30" cy="30" r="30" stroke="none"/><circle cx="30" cy="30" r="28.5" fill="none"/></g>
-             <path d="M24.19.292a1,1,0,0,1,1.41,0l5.975,5.975a1,1,0,0,1,0,1.41L11.659,27.592a1,1,0,0,1-.335.219L1.366,31.795A1,1,0,0,1,.072,30.5l3.983-9.958a1,1,0,0,1,.219-.335L24.19.292ZM22.32,4.98l4.567,4.567,2.575-2.575L24.895,2.4Zm3.159,5.975L20.911,6.388,7.966,19.333v.584h1a1,1,0,0,1,1,1v1h1a1,1,0,0,1,1,1v1h.584ZM6.038,21.261l-.211.211-3.043,7.61,7.61-3.043.211-.211a1,1,0,0,1-.647-.932v-1h-1a1,1,0,0,1-1-1v-1h-1a1,1,0,0,1-.932-.647Z" transform="translate(1108.4 2141.734)" fill="#B2B2B2" stroke="none" /></g></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g transform="translate(-1094 -2128)"><g transform="translate(1094 2128)" fill="none" stroke="#7E7E7E" stroke-width="3"><circle cx="30" cy="30" r="30" stroke="none"/><circle cx="30" cy="30" r="28.5" fill="none"/></g>
+             <path d="M24.19.292a1,1,0,0,1,1.41,0l5.975,5.975a1,1,0,0,1,0,1.41L11.659,27.592a1,1,0,0,1-.335.219L1.366,31.795A1,1,0,0,1,.072,30.5l3.983-9.958a1,1,0,0,1,.219-.335L24.19.292ZM22.32,4.98l4.567,4.567,2.575-2.575L24.895,2.4Zm3.159,5.975L20.911,6.388,7.966,19.333v.584h1a1,1,0,0,1,1,1v1h1a1,1,0,0,1,1,1v1h.584ZM6.038,21.261l-.211.211-3.043,7.61,7.61-3.043.211-.211a1,1,0,0,1-.647-.932v-1h-1a1,1,0,0,1-1-1v-1h-1a1,1,0,0,1-.932-.647Z" transform="translate(1108.4 2141.734)" fill="#7E7E7E" stroke="none" /></g></svg>
             </a>
           </div>
           </div>
@@ -45,7 +45,13 @@ class ListItem{
 
 
 // FETCH DATA FROM DATABASE
-fetch("./retrieve.php", {credentials: 'same-origin', SameSite: 'Lax'}).then(response => {
+fetch("./retrieve.php", { 
+  headers:{
+    "Set-Cookie": "SameSite=Strict",
+    credentials: "same-origin"
+   }
+  })
+  .then(response => {
     console.log('success');
 return response.json();
 }).then(data => {

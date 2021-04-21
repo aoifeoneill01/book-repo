@@ -15,7 +15,7 @@
   width: 300px;
   box-shadow: 2px 2px 20px rgba(0,0,0,0.16);
   background-color: white;
-  border-radius: 30px;
+  border-radius: 20px;
   padding: 30px;
   display: flex;
   place-items: center;
@@ -60,9 +60,6 @@
   background-color: rgba(0,0,0,0);
   color: #2D2D2D;
   border: 2px solid rgba(0,0,0,0.2);
-}
-#deleteBtn:hover{
-  background-color: rgba(0,0,0,0.1);
 }
 .add img{
   padding: 30px 0;
@@ -120,9 +117,9 @@ input{
 /* EDIT LIST STYLES */
 #currentlist{
   border: 3px solid #CBCBCB;
-  border-radius: 15px;
+  border-radius: 12px;
   padding: 15px 32px;
-  margin: 20px;
+  margin: 20px 0 30px;
 }
 .edit-label{
   font-size: 14px;
@@ -132,4 +129,11 @@ input{
 }
 .label-container{
   margin: 20px 0 10px;
+}
+
+.noteDelete{
+  margin: 30px 5px 0;
+  font-size: 12px;
+  width: 100px;
+  box-shadow: none;
 }

@@ -46,7 +46,7 @@
 .list-item{
   width: 200px;
   background-color: rgba(255,255,255,0.8);
-  padding: 30px 30px 20px;
+  padding: 30px;
   border-radius: 20px;
 }
 .list-item:hover{
@@ -148,7 +148,7 @@ li p:nth-child(2), .list-headings p:nth-child(2){
  height: 28px;
 }
 .delete-item, .add-note{
-  padding: 0 5px;
+  padding: 0 3px;
 }
 .delete-note, .edit-note{
   padding: 3px 0;
@@ -158,10 +158,10 @@ li p:nth-child(2), .list-headings p:nth-child(2){
   height: 30px;
 }
 .delete-item:hover > svg g, .add-note:hover svg g{
-  stroke: #666666;
+  stroke: #494949;
 }
 .delete-item:hover > svg g path, .add-note:hover svg g path{
-  fill: #666666;
+  fill: #494949;
   stroke: none;
 }
 .icon-container{
@@ -179,7 +179,8 @@ li p:nth-child(2), .list-headings p:nth-child(2){
 /* DETAILS PAGE STYLES */
 .edit-this-note{
   position: absolute;
-  width: 800px;
+  max-width: 800px;
+  width: 60%;
 }
 .details-container{
   padding: 0 40px;
@@ -201,9 +202,8 @@ textarea{
   width: 90%;
 }
 .input-container, .edit-note-container{
-  display: flex;
   flex-direction: column;
-  visibility: hidden;
+  display: none;
   max-width: 800px;
 }
 .new-note-title{
@@ -249,6 +249,7 @@ textarea{
   display: flex;
   margin-bottom: 60px;
   max-width: 800px;
+  position: relative;
 }
 .notes-section svg{
   width: 26px;
@@ -267,4 +268,16 @@ textarea{
   bottom: 0;
   flex-direction: column;
   padding-left: 25px;
+}
+.note-delete-form{
+  position: absolute;
+  top: 50%;
+  right: 80px;
+  background-color:white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 230px;
+  box-shadow: 2px 2px 10px rgb(0 0 0 / 20%);
+  display: none;
+  z-index: 1;
 }
