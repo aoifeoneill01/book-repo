@@ -11,29 +11,11 @@
     <link rel="shortcut icon" type="image/png" href="images/logo.png">
     <title>Book Repository</title>
   </head>
-  <body id="index-body">
+  <body id="index-body" onload="animateText()">
 
 <?php
 require 'addtolist.html';
  ?>
-
-<!-- GRID LINES STYLING ELEMENTS -->
-<div class="outline-container">
-  <div class="border one">
-  </div>
-  <div class="border two">
-  </div>
-  <div class="border three">
-  </div>
-  <div class="border four">
-  </div>
-  <div class="b five">
-  </div>
-  <div class="b six">
-  </div>
-  <div class="b heavy">
-  </div>
-</div>
 
 <!-- INTORDUCTION PAGE -->
   <div class="intro-container">
@@ -50,22 +32,29 @@ require 'addtolist.html';
         <input id="input" type="text" name="title-search" value="" placeholder="Search By Title">
         <button id="submitBtn" type="submit" name="submit"><img src="images/search.svg" /></button>
       </form>
+      <div class="search-bg">
+      </div>
     </div>
+
+    <div class="cover-bg"></div>
 
     <div class="main-text">
-       <p id="title-main"><span>My </span>Repository</p>
+     <div class="main-txt">
+         <p id="title-main"><span>MY</span><p>
+      </div> 
+      <div class="main-txt">
+        <p id="title-main-two">REPOSITORY</p>
+     </div>
     </div>
 
-    <div class="white-box">
-    <div class="intro-text-container">
-      <p id="descript">Create your own reading library and log notes on each book</p>
-      <p class="handwriting" id="hand-one">Search for a book</p>
-    </div>
+    <embed class="cover-img" src="images/book.svg">
+
+    <div class="descript-txt">
+      <p class="home-descript" >create your own notes on each book you save to your library</p>
     </div>
 
-    <p id="last-grid-item" class="handwriting">Write your own notes</p>
-</div>
-
+    <embed class="white-bg" src="images/Group 39.svg" type="">
+    
 
 <!-- BOOK SEARCH RESULTS -->
 <div class="search-result-container">
@@ -102,6 +91,7 @@ require 'addtolist.html';
     <script src="scripts/request.js"></script>
     <script src="scripts/addList.js"></script>
     <script src="scripts/populate-form.js"></script>
+    <script src="scripts/animateCover.js"></script>
 
   </body>
 </html>

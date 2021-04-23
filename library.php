@@ -29,6 +29,8 @@ require 'delete-item.html';
     <input id="input" class="title-search" type="text" name="title-search" value="" placeholder="Search My Library">
     <button id="submitBtn" class="submit-search" type="submit" name="submit-search"><img src="images/search.svg" /></button>
   </form>
+  <div class="search-bg">
+      </div>
 </div>
 
   <p id="results"></p>

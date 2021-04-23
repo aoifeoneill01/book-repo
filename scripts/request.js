@@ -4,17 +4,18 @@ var titleValue;
 
  document.getElementById('submitBtn').addEventListener('click', event => {
  event.preventDefault();
- document.querySelector(".outline-container").style.display = "none";
  document.querySelector(".main-text").style.display = "none";
- document.querySelector(".white-box").style.display = "none";
- document.getElementById("last-grid-item").style.display = "none";
+ document.querySelector(".cover-img").style.display = "none";
+ document.querySelector(".descript-txt").style.display = "none";
 
  titleValue = document.getElementById('input').value.toString();
 
 
 // Save value and place into url
 fetch('https://www.googleapis.com/books/v1/volumes?q='+titleValue+'&key=AIzaSyAh5OwnOxgMSHFxF26o9ZR6RIGi4wRrWPo', {
-  headers: {}
+  headers: {
+    
+  }
 }).then((response) => {
  console.log('resolved');
  return response.json();
