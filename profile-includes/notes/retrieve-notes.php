@@ -1,8 +1,8 @@
 <?php
 
-require 'db-connect.php';
+require '../../includes/db-connect.php';
 
-$retrieve = 'SELECT * FROM addnote';
+$retrieve = 'SELECT * FROM add_note';
 
 $save = mysqli_query($conn, $retrieve);
 

@@ -1,0 +1,17 @@
+.header-back img{
+    width: 40px;
+}
+.header-back{
+    position: relative;
+    left: 8%;
+    z-index: 1;
+}
+header h1{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+header{
+    display: flex;
+    margin-top: 55px;
+}

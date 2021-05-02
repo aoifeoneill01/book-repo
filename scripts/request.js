@@ -1,10 +1,8 @@
-/*jshint esversion: 6*/
 
 var titleValue;
 
  document.getElementById('submitBtn').addEventListener('click', event => {
  event.preventDefault();
- document.querySelector(".main-text").style.display = "none";
  document.querySelector(".cover-img").style.display = "none";
  document.querySelector(".descript-txt").style.display = "none";
 

@@ -1,6 +1,27 @@
 #hide-inputs, .hide-id{
   display: none;
 }
+.add-note-c{
+  display: flex;
+  align-items: center;
+}
+.add-note-c p{
+  font-size: 18px;
+  margin-left: 15px;
+  color:rgba(0,0,0,0.5);
+}
+.add-icon-container{
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.add-icon-container svg{
+  fill: rgba(0,0,0,0.5);
+}
+.text-main svg:hover + p{
+  color: black;
+}
 .add-container, .edit-container, .delete-container{
   width: 100vw;
   height: 100vh;
@@ -43,7 +64,6 @@
   color: white;
   font-size: 14px;
   font-weight: 600;
-  box-shadow: 2px 2px 15px rgba(0,0,0,0.16);
 }
 #formBtn:hover, .editBtn:hover{
   cursor: pointer;
@@ -56,18 +76,20 @@
   margin: 15px 10px;
   width: 120px;
 }
+#deleteBtn:hover{
+  background-color: rgba(0,0,0,0.2);
+}
 #deleteBtn{
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0.1);
   color: #2D2D2D;
-  border: 2px solid rgba(0,0,0,0.2);
 }
 .add img{
-  padding: 30px 0;
+  margin: 30px 0;
 }
 input, option{
   font-family: futura-pt, sans-serif;
   margin: 0;
-  font-size: 16px;
+  font-size: 22px;
 }
 input{
   border: none;
@@ -80,6 +102,7 @@ input{
 }
 #newlist, #currentlist{
   border-bottom: 1px solid #CBCBCB;
+  text-transform: lowercase;
 }
 #datalist{
   background-color: #E3EBFF;
@@ -113,7 +136,24 @@ input{
 .edit-buttons button{
   margin: 5px;
 }
-
+.details-more{
+  position: sticky;
+  top: 150px;
+}
+.details-more h3{
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  border-bottom: .1px solid rgba(0,0,0,0.1);
+  padding-bottom: 4px;
+}
+.details-more h3:hover{
+  cursor: pointer;
+}
+.created-at{
+  color: rgba(0,0,0,.6);
+  padding-top: 30px;
+}
 /* EDIT LIST STYLES */
 #currentlist{
   border: 3px solid #CBCBCB;
@@ -122,10 +162,11 @@ input{
   margin: 20px 0 30px;
 }
 .edit-label{
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   position: absolute;
   left: 80px;
+  top: 40px;
 }
 .label-container{
   margin: 20px 0 10px;

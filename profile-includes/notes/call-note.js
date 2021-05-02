@@ -1,5 +1,5 @@
 
-fetch('./retrieve-notes.php', {
+fetch('../profile-includes/notes/retrieve-notes.php', {
    headers: {
       "Cache-Control": "must-revalidate"
    }
@@ -7,16 +7,22 @@ fetch('./retrieve-notes.php', {
    return response.json();
 }).then(data => {
 
-  const pageTitle = document.querySelector(".details-title").textContent;
+  let pageTitle = document.querySelector(".details-title").textContent;
 
 // FILTER THROUGH AND FIND MATCHING BOOK TITLES
   const notes = data.filter(val => {
     return val.bookTitle == pageTitle;
   });
 
+// PAGE TITLE  
+  let noteTitle = pageTitle.toLowerCase();
+  document.getElementById("note-container").innerHTML += `<p class="note-title">${noteTitle} <span>notes</span></p>`;
+
+
 // RETURN RELATED SECTIONS
   let section = '';
-  for(var x in notes)
+  for(var x in notes){
+
    section +=
    `<div class="notes-section">
     <div class="text-note">
@@ -26,24 +32,62 @@ fetch('./retrieve-notes.php', {
     </div>
     <div class="icon-container note-icons">
       <div class="add-note edit-note">
-         <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g transform="translate(-1094 -2128)"><g transform="translate(1094 2128)" fill="none" stroke="#7E7E7E" stroke-width="3"><circle cx="30" cy="30" r="30" stroke="none"/><circle cx="30" cy="30" r="28.5" fill="none"/></g>
-          <path d="M24.19.292a1,1,0,0,1,1.41,0l5.975,5.975a1,1,0,0,1,0,1.41L11.659,27.592a1,1,0,0,1-.335.219L1.366,31.795A1,1,0,0,1,.072,30.5l3.983-9.958a1,1,0,0,1,.219-.335L24.19.292ZM22.32,4.98l4.567,4.567,2.575-2.575L24.895,2.4Zm3.159,5.975L20.911,6.388,7.966,19.333v.584h1a1,1,0,0,1,1,1v1h1a1,1,0,0,1,1,1v1h.584ZM6.038,21.261l-.211.211-3.043,7.61,7.61-3.043.211-.211a1,1,0,0,1-.647-.932v-1h-1a1,1,0,0,1-1-1v-1h-1a1,1,0,0,1-.932-.647Z" transform="translate(1108.4 2141.734)" fill="#7E7E7E" stroke="none" /></g></svg>
-      </div>
+        <svg alt="edit note" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>
+    </div>
       <div class="delete-item delete-note">
-          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g transform="translate(-1181 -2128)"><g transform="translate(1181 2128)" fill="none" stroke="#7E7E7E" stroke-width="3"><circle cx="30" cy="30" r="30" stroke="none"/><circle cx="30" cy="30" r="28.5" fill="none"/></g><g transform="translate(1181 2128)">
-          <path d="M4.919,4.919a1.428,1.428,0,0,1,2.022,0L14.5,12.48l7.558-7.561A1.43,1.43,0,0,1,24.08,6.941L16.519,14.5l7.561,7.558a1.43,1.43,0,0,1-2.022,2.022L14.5,16.519,6.941,24.08a1.43,1.43,0,1,1-2.022-2.022L12.48,14.5,4.919,6.941a1.428,1.428,0,0,1,0-2.022Z" transform="translate(15.501 15.501)" fill="#7E7E7E" stroke="none" /></g></g></svg>
+          <svg alt="delete note" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+          </svg>
+         </div>
       </div>
-      </div>
-      <form action="edit-note-db.php" method="POST" class="note-delete-form">
+      <form class="note-delete-form">
           <label>Sure you want to delete this note?</label>
-          <input class="hide-id" id="note-id" type="text" name="id" value="${notes[x].id}">
+          <input class="hide-id noteId" id="note-id" type="text" name="id" value="${notes[x].id}">
+          <input class="hide-id noteId" type="text" name="bookTitle" value="${pageTitle}">
           <button class="editBtn noteDelete" type="submit" name="delete">Delete</button>
           <button class="editBtn  noteDelete cancel" id="deleteBtn" type="button">Cancel</button>
         </form>
     </div>`
 
    document.querySelector(".saved-notes-container").innerHTML = section;
+  };
 
+   // NOTE SECTIONS
+   for(i = 0; i < notes.length; i++){
+     document.querySelector(".nSection").innerHTML += 
+     `<li class="list-s" value="${notes[i].id}"><span>${notes[i].noteName}</span><span class="hide-id">${notes[i].id}</span></li>`;
+
+     document.querySelectorAll(".list-s").forEach(item => {
+       item.addEventListener('click', SectionScroll => {
+         document.querySelectorAll(".noteId").forEach(id => {
+
+           if(item.value.toString() == id.value){
+              const moveY = id.parentNode.parentNode.offsetTop; 
+              window.scrollTo(0, moveY);
+           }
+         });
+       });
+     });
+   }
+  
+
+   // CREATED AT TIMESTAMP 
+  let timeCreated = data.map((times => {
+     return times.timestamp;
+  }));
+  let created = timeCreated.sort(function(a, b){return a - b})
+ 
+  monthNum = parseInt(created[0][5] + created[0][6]) - 1;
+  months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+
+  monthCreated = months[monthNum];
+  dayCreated = created[0][8] + created[0][9];
+  year = created[0][0] + created[0][1] + created[0][2] + created[0][3];
+  
+  document.querySelector(".created").innerHTML = `<p class="created-at">Created, ${monthCreated}  ${dayCreated} ${year}</p>`;
+ 
 
    // EDIT NOTE FORM
    document.querySelectorAll(".edit-note").forEach(note => {
@@ -77,7 +121,6 @@ fetch('./retrieve-notes.php', {
       document.querySelectorAll(".cancel").forEach(button => {
         button.addEventListener('click', hideDeleteForm => {
          button.parentNode.style.display = "none";
-         console.log(button.parentNode.className);
       });
     });
 

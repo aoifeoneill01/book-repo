@@ -1,6 +1,6 @@
 <?php
 
-include 'db-connect.php';
+include '../includes/db-connect.php';
 
 
 if(isset($_POST['submit'])) {
@@ -35,10 +35,10 @@ $title = mysqli_real_escape_string($conn, $_POST['title']);
 $author = mysqli_real_escape_string($conn, $_POST['author']);
 $image = mysqli_real_escape_string($conn, $_POST['image']);
 
-$query = "INSERT INTO library(createlist, title, author, image) VALUES('$createlist', '$title', '$author', '$image')";
+$query = "INSERT INTO user_library(createlist, title, author, image) VALUES('$createlist', '$title', '$author', '$image')";
 
 if(mysqli_query($conn, $query)){
-  header('Location: home.php');
+  header('Location: ../profile/search.php');
 } else {
   echo 'Connection error';
 };

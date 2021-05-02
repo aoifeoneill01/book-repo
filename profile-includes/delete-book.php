@@ -1,6 +1,6 @@
 <?php
 
-include 'db-connect.php';
+include '../includes/db-connect.php';
 
 // Delete book from library
 

@@ -1,6 +1,7 @@
 <?php
 
-$conn = mysqli_connect('---', '---', '---', '---');
+$conn = mysqli_connect('<enter databse credentials>');
+
 
 if (!$conn){
   echo 'Database connection error';

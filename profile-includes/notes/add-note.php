@@ -1,7 +1,6 @@
-
 <?php
 
-include 'db-connect.php';
+include '../../includes/db-connect.php';
 
 // ADD Notes
 if(isset($_POST['save'])) {
@@ -29,10 +28,10 @@ $bookTitle = mysqli_real_escape_string($conn, $_POST['bookTitle']);
 $noteName = mysqli_real_escape_string($conn, $_POST['noteName']);
 $noteInput = mysqli_real_escape_string($conn, $_POST['noteInput']);
 
-$querySave = "INSERT INTO addnote(bookTitle, noteName, noteInput) VALUES('$bookTitle', '$noteName', '$noteInput')";
+$querySave = "INSERT INTO add_note(bookTitle, noteName, noteInput) VALUES('$bookTitle', '$noteName', '$noteInput')";
 
 if(mysqli_query($conn, $querySave)){
-  header('Location: library.php');
+  header('Location: ../../profile/details.php?title=' . $bookTitle);
 } else {
   echo 'Save error';
 };

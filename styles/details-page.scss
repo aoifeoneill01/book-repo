@@ -1,0 +1,130 @@
+
+.input-sizer {
+  display: inline-grid;
+  vertical-align: top;
+  align-items: center;
+  position: relative;
+  border: none;
+  padding: .25em .5em;
+  margin: 0;
+  
+  &.stacked {
+    padding: 20px 0;;
+    align-items: stretch;
+    line-height: 1.6;
+    
+    &::after,
+    input,
+    textarea {
+      grid-area: 2 / 1;
+    }
+  }
+  
+  &::after,
+  input,
+  textarea {
+    width: auto;
+    min-width: 1em;
+    grid-area: 1 / 2;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+    resize: none;
+    background: none;
+    appearance: none;
+    border: none;
+    font-family: serif;
+    font-size: 22px;
+    line-height: 1.6;
+  }
+  
+  &::after {
+    content: attr(data-value) ' ';
+    visibility: hidden;
+    white-space: pre-wrap;
+  }
+}
+.enter-new-note{
+  margin: 0 0 250px 65px;
+}
+textarea{
+  left: 0;
+}
+textarea::-webkit-scrollbar {
+  width: 0;
+}
+.details-section-c, .details-topic-c{
+  margin-left: 30px;
+}
+.nSection{
+  padding: 0;
+  margin-bottom: 60px;
+  display: none;
+}
+.show-list{
+  display: block;
+}
+.details-section-c li{
+  text-align: left;
+  font-size: 12px;
+  margin: 24px 0 24px 24px;
+  color: rgba(0,0,0,0.3);
+  list-style-type: none;
+  border-bottom: .1px solid #F5F5F5;
+}
+.details-section-c li span{
+font-size: 20px;
+font-weight: 600;
+}
+.details-section-c li:hover{
+  cursor: pointer;
+  color: rgba(0,0,0,0.5);
+}
+.input-container input{
+  width: 90%;
+}
+.add-topic-form{
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.16);
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px 50px;
+  width: fit-content;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  left: 50px;
+}
+#new-topic{
+  border-bottom: 1px solid #CBCBCB;
+}
+.add-topic-form button{
+  margin-top: 50px !important;
+  align-self: center;
+}
+.exit-topic{
+  align-self: flex-end;
+  position: relative;
+  top: -16px;
+  right: -20px;
+}
+.exit-topic svg{
+  width: 14px;
+  height: 14px;
+}
+.exit-topic:hover{
+  cursor: pointer;
+}
+.exit-topic:hover > svg g{
+  stroke: rgba(0,0,0,0.6);
+}
+.topic-add-c p{
+  width: 80px;
+  position: relative;
+  left: -130px;
+  visibility: hidden;
+}
+.topic-add-c{
+  display: flex;
+  align-items: center;
+}

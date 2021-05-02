@@ -1,0 +1,167 @@
+#nav-library img{
+    width: 40px;
+}
+.account-container{
+    background: linear-gradient(90deg, rgba(233,252,255,1) 0%, rgba(250,244,255,1) 100%);
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+.acc-container{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.acc-one{
+    width: 30%;
+    margin-left: 5%;
+}
+.acc-two{
+    width: 55%;
+    padding-left: 12%;
+    background-color: white;
+}
+.acc-title{
+    font-size: 48px;
+    font-family: futura-pt;
+    font-weight: 500;
+    margin: 48px 0; 
+}
+.acc-title.two{
+    margin-top: 140px;
+}
+.acc-title span{
+  color: #6A20FF;
+}
+.acc-one ul{
+    list-style-type: none;
+    padding-left: 100px;
+}
+.acc-one li{
+    font-size: 22px;
+    padding: 10px 0;
+    color: lightslategrey;
+}
+.acc-two section h3{
+    padding: 12px 0;
+}
+.acc-two section p{
+    padding: 10px 0;
+    font-size: 18px;
+    color: lightslategrey;
+    border-bottom: .1px solid lightgrey;
+    margin-top: 10px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+}
+.deleteAccBtn, .passwordChangeBtn{
+  border-radius: 30px;
+  border: none;
+  background-color:#E1E1E1;
+  border:2px solid #E1E1E1;
+  font-size: 14px;
+  padding: 12px 24px;
+  margin-top: 80px;
+  width: 174px;
+  display: block;
+  font-weight: 600;
+  color: #404040;
+}
+.deleteAccBtn{
+    margin-top: 20px;
+    background-color:rgba(0,0,0,0);
+    border: 2px solid #E1E1E1;
+}
+.deleteAccBtn:hover, .passwordChangeBtn:hover{
+  background-color:#C9C9C9;
+  border: 2px solid #C9C9C9;
+  cursor: pointer;
+}
+.deleteAccBtn:hover{
+  background-color: white;
+}
+.acc-one li:hover{
+ cursor: pointer;
+ color: black;
+}
+.acc-one li a{
+    color: black;
+    text-decoration: none;
+}
+.user-info{
+    color: black;
+}
+.note-delete-form{
+    background-color:white;
+    padding: 60px;
+    border-radius: 20px;
+    width: 370px;
+    box-shadow: 2px 2px 10px rgb(0 0 0 / 20%);
+}
+.delete-acc-container{
+   position: absolute;
+   background-color: rgba(0,0,0,.4);
+   width: 100vw;
+   height: 100vh;
+   display: none;
+   align-items: center;
+   justify-content: center;
+}
+#deleteAcc, #cancelBtn{
+    font-size: 16px;
+    width: 160px;
+    margin-top: 40px;
+}
+#cancelBtn{
+    background-color: rgba(0,0,0,0.2);
+}
+#cancelBtn:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+#delete-acc-form label{
+    font-size: 20px;
+}
+
+/* Help section */
+.help-form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    position: relative;
+    left: -40px;
+}
+.help-form input, .help-form textarea{
+    background-color: #F2F5FF;
+    border-radius: 30px;
+    border: none;
+    padding: 16px 40px;
+    margin: 6px 0;
+    width: 100%;
+    font-size: 16px;
+}
+.help-descript{
+    width: 60%;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+.help .acc-title.two{
+    margin-bottom: 10px;
+}
+.correct, .error{
+    font-size: 18px;
+    margin: 20px 0;
+}
+.error{
+    color: red;
+}
+.correct{
+    color: green;
+}
+textarea{
+    resize: none;
+}
+textarea:active, textarea:focus{
+    outline: none;
+}

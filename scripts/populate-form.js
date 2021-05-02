@@ -1,7 +1,6 @@
-/* jshint esversion:6 */
 
 // FETCH DATA FROM DATABASE
-fetch("./retrieve.php").then(response => {
+fetch("../profile-includes/retrieve.php").then(response => {
     console.log('success');
 return response.json();
 }).then(data => {

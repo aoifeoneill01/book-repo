@@ -1,10 +1,4 @@
 @media screen and (max-width: 1200px){
-  #title-main, #title-main-two{
-    font-size: 55px;
-  }
-  .main-txt{
-    height: 60px;
-  }
   #index-body{
     overflow-y: scroll;
   }
@@ -20,12 +14,7 @@
  .white-box{
    left: 0;
  }
- .main-text{
-   margin-left: 10%;
-   bottom: 0;
-   left: 0;
- }
-  #my-library{
+  #my-library, .nav-more{
     top: 25px;
     margin: 0;
   }
@@ -42,6 +31,12 @@
   .descript-txt{
     margin-left: 10%;
     margin-top: 10%;
+  }
+  .search-bar:hover + .search-bg{
+    top: 73px;
+  }
+  .search-bg{
+    top: 80px;
   }
 }
 
@@ -63,6 +58,19 @@
  .edit-this-note{
    width: 80%;
  }
+ .bg-cover-container, .bg-white-container, .bg-white-container-two{
+   display: none;
+ }
+ .descript-txt{
+   overflow: initial;
+ }
+ .home-descript{
+   font-size: 32px;
+   top: 0;
+ }
+ #second{
+   margin-left: 0;
+ }
 }
 @media screen and (max-width: 650px){
   .book-s-container{
@@ -83,11 +91,6 @@
   .text-container{
     width: -webkit-fill-available;
     border-radius: 30px;
-  }
-  .arrow-container{
-    position: absolute;
-    right: 15px;
-    top: 110px;
   }
   #arrow-left-contain{
     left: 15px;

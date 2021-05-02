@@ -1,9 +1,9 @@
 <?php
 
-include 'db-connect.php';
+include '../includes/db-connect.php';
 
 // Select all from database
-$data = 'SELECT * FROM library';
+$data = 'SELECT * FROM user_library';
 
 // Save above data through our connection
 $result = mysqli_query($conn, $data);

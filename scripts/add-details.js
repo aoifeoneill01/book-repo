@@ -1,4 +1,3 @@
-/* jshint esversion:6 */
 
 function getUrlTitle(){
 
@@ -10,14 +9,14 @@ document.querySelector(".details-title").innerHTML = titleName;
 
 
 // FETCH DATA
-fetch('./retrieve.php').then(response => {
+fetch('../profile-includes/retrieve.php').then(response => {
   return response.json();
 }).then(data => {
 
 // FILTER AND FIND MATCHING TITLE NAMES
    dataDetails = data.filter(function(val, index, array){
      return val.title === titleName;
-  });
+});
 
 // GET ID
  let title = '';

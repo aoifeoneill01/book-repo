@@ -1,3 +1,6 @@
+body{
+  margin: 0;
+}
 .library-bg{
   background: linear-gradient(25deg, rgba(230,234,255,1) 40%, rgba(250,244,248,1) 100%);
   min-height: 100vh;
@@ -5,7 +8,7 @@
 #my-library{
   width: fit-content;
   top: 55px;
-  left: 4%;
+  left: 8%;
   position: absolute;
   margin-top: 0;
 }
@@ -45,15 +48,17 @@
 }
 .list-item{
   width: 200px;
-  background-color: rgba(255,255,255,0.8);
+  background-color: ghostwhite;
   padding: 30px;
   border-radius: 20px;
 }
 .list-item:hover{
   cursor: pointer;
+  background-color: white;
 }
 .list-item img{
-  box-shadow: 2px 2px 10px rgb(0 0 0 / 20%);;
+  box-shadow: 2px 2px 10px rgb(0 0 0 / 20%);
+  height: 186px;
 }
 li{
   list-style-type: none;
@@ -71,25 +76,17 @@ li p, .list-headings p{
 li p:nth-child(2), .list-headings p:nth-child(2){
   font-weight: 400;
 }
-.add-note{
-  height: 28px;
-}
-.add-note svg:hover{
-  cursor: pointer;
-  fill:#B2B2B2;
-}
 #list-title, .note-title{
   margin-left: 70px;
-  font-family: freight-big-pro;
-  font-size: 48px;
-  font-weight: 500;
+  font-family: 'futura-pt';
+  font-size: 46px;
+  font-weight: 600;
 }
 .note-title{
-  margin: 0;;
+  margin: 0 auto;
 }
 .note-title span{
-  font-style: italic;
-  font-weight: 900;
+  color: #6A20FF;
 }
 .grid-container{
   margin: 30px 0 60px;
@@ -106,18 +103,59 @@ li p:nth-child(2), .list-headings p:nth-child(2){
   z-index: 1;
 }
 #arrow-right-library:hover{
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.1);
 }
 #results{
   text-align: center;
   display: none;
 }
+.more img{
+  transform: rotate(90deg);
+  width: 10px;
+}
+.nav-dropdown{
+  background-color: white;
+  width: 220px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  position: absolute;
+  right: 8%;
+  top: 30px;
+  z-index: 1;
+  display: none;
+}
+.nav-more{
+  position: absolute;
+  right: 8%;
+  top: 55px;
+}
+.showList{
+  display: block;
+}
+.nav-dropdown a{
+  color: black;
+  font-size: 20px;
+}
+.nav-dropdown p{
+  padding: 6px 10px;
+}
+.nav-dropdown p:hover{
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+a{
+  text-decoration: none;
+}
 /* LIST ITEM STYLES */
 #back-library{
   position: sticky;
-  margin: 55px 0 50px 4%;
+  margin: 55px 0 50px 8%;
   width: fit-content;
   z-index: 3;
+}
+#back-library img{
+  width: 40px;
 }
 .item-body{
   display: flex;
@@ -137,37 +175,56 @@ li p:nth-child(2), .list-headings p:nth-child(2){
   place-items: center;
 }
 .text-main svg{
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
 }
 .text-main svg:hover{
   fill: black;
   cursor: pointer;
 }
-.delete-item{
- height: 28px;
+.delete-item, .add-note, .topic-note{
+  border-radius: 8px;
+  margin: 0 4px;
+  display: flex;
+  place-content: center;
+  height: 34px;
+  width: 34px;
+  place-items: center;
+  background-color: rgba(0,0,0,0.1);
 }
-.delete-item, .add-note{
-  padding: 0 3px;
+.add-note a{
+  height: 30px;
 }
-.delete-note, .edit-note{
-  padding: 3px 0;
+.delete-note, .edit-note, .topic-note{
+  border-radius: 50%;
+  margin: 4px 0;
+  display: flex;
+  background-color: #F5F5F5;
 }
 .delete-item svg, .add-note svg{
   width: 30px;
   height: 30px;
+  color: rgba(0,0,0,0.6);
 }
-.delete-item:hover > svg g, .add-note:hover svg g{
-  stroke: #494949;
+.topic-item svg{
+  width: 18px !important;
+  height: 18px !important;
+  color: rgba(0,0,0,0.6);
 }
-.delete-item:hover > svg g path, .add-note:hover svg g path{
-  fill: #494949;
-  stroke: none;
+.delete-item svg{
+  transform: rotate(45deg);
+}
+.delete-item:hover, .add-note:hover, .topic-item:hover{
+  background-color: rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.topic-item:hover + p{
+  visibility: visible;
 }
 .icon-container{
   display: flex;
   justify-content: center;
-  margin: 8px 0;
+  margin: 14px 0 8px 0;
   visibility: hidden;
   position: relative;
   bottom: -10px;
@@ -180,10 +237,13 @@ li p:nth-child(2), .list-headings p:nth-child(2){
 .edit-this-note{
   position: absolute;
   max-width: 800px;
-  width: 60%;
+  width: 57%;
+  margin-left: 64px;
+  border-bottom: .1px solid rgba(0,0,0,0.1);
+  display:none;
 }
 .details-container{
-  padding: 0 40px;
+  padding-left: 40px;
   width: auto;
 }
 textarea, input, input:focus, input:active{
@@ -199,33 +259,32 @@ textarea{
   left: -20px;
 }
 .text-note{
-  width: 90%;
+  width: auto;
 }
 .input-container, .edit-note-container{
   flex-direction: column;
-  display: none;
   max-width: 800px;
+  display: flex;
+}
+.input-container{
+  display:none;
 }
 .new-note-title{
   font-size: 28px;
   font-weight: 600;
   background-color: rgba(255,255,255,0);
+  padding: 0;
 }
 .new-note-p{
   margin-top: 20px;
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: 22px;
+  line-height: 1.6;
   font-weight: 400;
   font-family: inherit;
-  height: fit-content;
-}
-#saveBtn{
-  background-color: white;
-  color: #2D2D2D;
 }
 .save-button{
   display: flex;
-  justify-content: flex-end;
+  align-self: flex-end;
 }
 #note-container{
   position: absolute;
@@ -236,44 +295,49 @@ textarea{
   padding-top: 30px;
 }
 #note-book-details{
-  padding-bottom: 60px;
-  text-align: center;
+  padding-bottom: 70px;
+  background-color: rgba(255,255,255,0);
+}
+#note-book-details img{
+  height: 240px;
 }
 #note-book-details:hover{
   cursor: auto;
 }
 .notes-body-container{
-  width: 65%;
+  width: 70%;
   margin: 0 auto;
+  position: relative;
 }
 .notes-section{
   display: flex;
   margin-bottom: 60px;
   max-width: 800px;
   position: relative;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 .notes-section svg{
   width: 26px;
   height: 26px;
-  align-self: flex-end;
 }
 .notes-section:hover > .note-icons{
   visibility: visible;
   cursor: pointer;
 }
 .note-icons{
-  width: 5%;
+  width: 35px;
   align-items: start;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin: 0;
   bottom: 0;
   flex-direction: column;
-  padding-left: 25px;
+  padding-right: 30px;
 }
 .note-delete-form{
   position: absolute;
-  top: 50%;
-  right: 80px;
+  top: 50px;
+  left: -300px;
   background-color:white;
   padding: 30px;
   border-radius: 20px;
@@ -281,4 +345,9 @@ textarea{
   box-shadow: 2px 2px 10px rgb(0 0 0 / 20%);
   display: none;
   z-index: 1;
+}
+.created{
+  margin-left: 65px;
+  border-top: .2px solid rgba(0,0,0,0.1);
+  width: 90%;
 }

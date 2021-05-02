@@ -2,7 +2,7 @@ body{
   margin: 0;
   position: relative;
 }
-p, label, #input, #submitBtn, #addToList, #formBtn, .editBtn, .new-note-title, textarea{
+p, label, #input, #submitBtn, #addToList, #formBtn, .editBtn, .new-note-title, textarea, li, h3{
   font-family: futura-pt, sans-serif;
   margin: 0;
 }
@@ -36,7 +36,7 @@ background-color: #2D2D2D;
   align-items: center;
   border-radius: 30px 0 0 30px;
 }
-#image{
+#image, #addForm-cover{
   box-shadow: 2px 2px 10px rgb(0 0 0 / 10%);
 }
 .text-container{
@@ -98,13 +98,13 @@ background-color: #2D2D2D;
 }
 .search-bar:hover + .search-bg{
   background: linear-gradient(196deg, rgba(255,108,206,.1) 0%, rgba(158,60,249,.1) 50%, rgba(255,108,206,.1) 100%);
-  height: 54px;
-  width: 381px;
-  top: 34px;
-  left: -5px;
+  height: 56px;
+  width: 386px;
+  top: 33px;
+  left: -8px;
 }
 .search-bg{
-  background-color: linear-gradient(196deg, rgba(255,108,206,0) 0%, rgba(158,60,249,0) 50%, rgba(255,108,206,0) 100%);
+  background: linear-gradient(196deg, rgba(255,108,206,0) 0%, rgba(158,60,249,0) 50%, rgba(255,108,206,0) 100%);
   height: 41px;
   width: 370px;
   position: absolute;
@@ -160,7 +160,7 @@ button img{
   align-self: center;
 }
 .arrow-container:hover{
-  background-color:rgba(0,0,0,0.2);
+  background-color:rgba(0,0,0,0.1);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -220,38 +220,25 @@ padding-top: 40px;
   margin-top: 80px;
   justify-content: center;
 }
-.library img{
-  width: 28px;
-  padding: 0 20px;
-  position: relative;
-  transition: transform .7s;
-}
-.library:hover > img{
+.library:hover{
   cursor: pointer;
-  transform: translateX(30px);
 }
 .library p span{
   font-weight: 400;
 }
-.library p a{
+.library p a, .logout a{
   color: black;
   text-decoration: none;
 }
-.library p{
+.library p, .logout a{
   font-size: 16px;
   font-weight: 600;
 }
-.main-text p span{
-  font-weight: 300;
-}
-.main-text{
-  width: fit-content;
-  line-height: 0.9;
-  grid-column: 2;
-  grid-row: 2;
-  position: relative;
-  bottom: 7%;
-  left: -50%;
+.logout{
+  z-index: 100;
+  top: 55px;
+  right: 8%;
+  position: absolute;
 }
 .intro-container{
   display: grid;
@@ -265,55 +252,59 @@ padding-top: 40px;
 .cover-img{
   mix-blend-mode: overlay;
   grid-row: 3;
-  width: 700px;
+  width: 740px;
   grid-column: 2;
   position: relative;
   left: -250%;
-  transform: rotate(0deg);
+  transform: rotate(10deg);
   transition: transform 1s, left 1s;
-}
-.cover-bg{
-  background: linear-gradient(270deg, rgba(60,93,249,0) 0%, rgba(158,109,255,0.15) 60%, rgba(255,108,206,0.15) 100%);
-  grid-row-start: 3;
-  grid-row-end: 5;
-  grid-column-start: 1;
-  grid-column-end: 4;
+  z-index: 100;
 }
 .white-bg{
-  top: 0;
-  right: 0;
-  width: 500px;
-  position: absolute;
-  opacity: 80%;
-}
-#title-main, #title-main-two{
-  font-size: 120px;
-  font-weight: 600;
-  transition: top .8s ease;
-  top: 100px;
+  top: -100%;
+  right: 40%;
+  width: 160%;
   position: relative;
+  opacity: 80%;
+  transform: scaleX(-1);
 }
-#title-main-two{
-  transition: top .8s ease .1s;
+.bg-white-container{
+  grid-column: 5;
+  grid-row: 1;
+  width: 120%;
 }
-.main-txt{
-  height: 101px;
-  overflow: hidden
+.bg-white-container-two{
+  grid-column: 4;
+  grid-row: 3;
+  width: 180%;
+}
+.white-bg-two{
+  width: 140%;
 }
 .descript-txt{
   height: 160px;
   overflow: hidden;
-  grid-column: 4;
-  grid-row: 3;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row: 2;
   z-index: 2;
 }
+#second{
+  margin-left: 100px;
+}
 .home-descript{
-  width: 200px;
-  font-size: 30px;
-  font-family: freight-big-pro;
-  transition: top .8s ease .1s;
+  font-size: 48px;
+  font-family: futura-pt;
+  transition: top .8s ease;
   top: 150px;
   position: relative;
+  font-weight: 500;
+}
+.home-descript.two{
+  transition: top .8s ease .1s;
+}
+.home-descript span{
+  color: #6A20FF;
 }
 .search-container{
   grid-column: 3;
@@ -339,4 +330,13 @@ padding-top: 40px;
   width: 400px;
   margin-top: 100px;
 }
-
+.bg-cover-container{
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  height: 100vh;
+  left: -25%;
+}
+.bg-cover-container embed{
+  width: 100%;
+}
